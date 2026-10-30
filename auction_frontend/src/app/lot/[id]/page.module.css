@@ -1,0 +1,262 @@
+.container {
+  max-width: 1200px;
+  margin: 0 auto;
+  padding: 20px;
+  min-height: auto;
+}
+
+.loading {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 400px;
+  font-size: 18px;
+  color: #666;
+}
+
+.error {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 400px;
+  font-size: 18px;
+  color: #dc3545;
+  background-color: #f8d7da;
+  border: 1px solid #f5c6cb;
+  border-radius: 8px;
+  padding: 20px;
+}
+
+.lotCard {
+  display: flex;
+  grid-template-columns: 1fr 1fr;
+  gap: 40px;
+  background: white;
+  border-radius: 16px;
+  padding: 30px;
+  box-shadow: 0 4px 20px rgba(0, 0, 0, 0.1);
+  align-items: start;
+}
+
+.imageSection {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  background-color: #f8f9fa;
+  border-radius: 12px;
+  padding: 20px;
+  min-height: 400px;
+}
+
+.image {
+  max-width: 100%;
+  max-height: 100%;
+  width: auto;
+  height: auto;
+  object-fit: contain;
+  border-radius: 8px;
+}
+
+.infoSection {
+  display: flex;
+  flex-direction: column;
+  gap: 20px;
+  width: 50%;
+}
+
+.title {
+  font-size: 28px;
+  font-weight: 700;
+  color: #333;
+  margin: 0;
+}
+
+.description {
+  font-size: 16px;
+  color: #666;
+  line-height: 1.6;
+  margin: 0;
+}
+
+.details {
+  display: flex;
+  flex-direction: column;
+  gap: 12px;
+  background-color: #f8f9fa;
+  padding: 20px;
+  border-radius: 8px;
+}
+
+.detail {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 8px 0;
+  border-bottom: 1px solid #e9ecef;
+}
+
+.detail:last-child {
+  border-bottom: none;
+}
+
+.label {
+  font-weight: 600;
+  color: #495057;
+  font-size: 14px;
+}
+
+.value {
+  font-weight: 500;
+  color: #333;
+  font-size: 14px;
+}
+
+.status {
+  padding: 4px 12px;
+  border-radius: 20px;
+  font-size: 12px;
+  font-weight: 600;
+  text-transform: uppercase;
+}
+
+.status:global(.active) {
+  background-color: #d4edda;
+  color: #155724;
+}
+
+.status:global(.inactive) {
+  background-color: #f8d7da;
+  color: #721c24;
+}
+
+.timerSection {
+  background-color: #e3f2fd;
+  padding: 20px;
+  border-radius: 8px;
+  text-align: center;
+  width: 100%;
+  height: fit-content;
+}
+
+.timerSection h3 {
+  margin: 0 0 10px 0;
+  font-size: 18px;
+  color: #1976d2;
+}
+
+.timer {
+  display: flex;
+  gap: 16px;
+  align-items: center;
+  justify-content: center;
+  background-color: white;
+  padding: 12px 16px;
+  border-radius: 8px;
+  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1);
+  width: fit-content;
+  margin: 0 auto;
+}
+
+.timerPart {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+.timerValue {
+  font-size: 32px;
+  font-weight: 700;
+  color: #1976d2;
+  font-family: monospace;
+  line-height: 1;
+}
+
+.timerLabel {
+  font-size: 12px;
+  color: #1976d2;
+  opacity: 0.8;
+  margin-top: 6px;
+}
+
+.timerFlash {
+  animation: flash-bg 0.6s ease;
+}
+
+@keyframes flash-bg {
+  0% { background-color: #fff; }
+  25% { background-color: #e3f2fd; }
+  100% { background-color: #fff; }
+}
+
+.userInfo {
+  background-color: #d4edda;
+  padding: 20px;
+  border-radius: 8px;
+  border: 1px solid #c3e6cb;
+  width: 100%;
+  height: fit-content;
+}
+
+.userInfo p {
+  margin: 8px 0;
+  font-weight: 600;
+  color: #155724;
+}
+
+.authMessage {
+  background-color: #fff3cd;
+  padding: 20px;
+  border-radius: 8px;
+  border: 1px solid #ffeaa7;
+  text-align: center;
+  width: 100%;
+  height: fit-content;
+}
+
+.authMessage p {
+  margin: 0;
+  color: #856404;
+  font-weight: 500;
+}
+
+/* Адаптивность для мобильных устройств */
+@media (max-width: 768px) {
+  .container {
+    padding: 10px;
+  }
+  
+  .lotCard {
+    flex-direction: column;
+    gap: 20px;
+    padding: 20px;
+  }
+
+  .infoSection {
+    width: 100%;
+  }
+  
+  .imageSection {
+    min-height: 350px;
+    padding: 15px;
+    width: 100%;
+  }
+  
+  .title {
+    font-size: 24px;
+  }
+  
+  .timerValue {
+    font-size: 24px;
+  }
+}
+
+@media (max-width: 480px) {
+  .imageSection {
+    min-height: 300px;
+    padding: 10px;
+  }
+  
+  .lotCard {
+    padding: 15px;
+  }
+} 

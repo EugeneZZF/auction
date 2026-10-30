@@ -1,0 +1,15 @@
+.state_button{
+    width: 100px;
+    border: 1px solid black;
+    height: 50px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    cursor: pointer;
+    transition: all .3s ease-in-out;
+    color: #019E58;
+}
+
+.state_button:hover{
+    opacity: 0.8;
+}

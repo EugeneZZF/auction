@@ -1,0 +1,67 @@
+// This is your Prisma schema file,
+// learn more about it in the docs: https://pris.ly/d/prisma-schema
+
+// Looking for ways to speed up your queries, or scale easily with your serverless or edge functions?
+// Try Prisma Accelerate: https://pris.ly/cli/accelerate-init
+
+generator client {
+  provider = "prisma-client-js"
+  output   = ".prisma/client/default"
+}
+
+datasource db {
+  provider = "postgresql"
+  url      = env("DATABASE_URL")
+}
+
+enum Role {
+  USER
+  ADMIN
+}
+
+model User {
+  id        String   @id @default(uuid())
+  email     String   @unique
+  name      String
+  password  String
+  role      Role     @default(USER)
+  balance   Int      @default(0) // баланс в копейках
+  bids      Int      @default(0) // сколько всего ставок сделал
+  wins      Wins[] // связь с победами
+  createdAt DateTime @default(now()) @map("created_at")
+  updatedAt DateTime @updatedAt @map("updated_at")
+}
+
+model Lot {
+  id          String  @id @default(uuid())
+  title       String
+  description String?
+  image       String?
+  basePrice   Int // стартовая цена в копейках
+
+  periodSeconds       Int // раз в сколько секунд идёт розыгрыш (например, 3600 = 1 час)
+  currentStart        DateTime // время начала текущего розыгрыша
+  currentEnd          DateTime // время завершения текущего розыгрыша
+  isActive            Boolean  @default(true)
+  inactivityTimeoutMs Int      @default(10000) // окно неактивности, мс, по истечении закрываем лот
+
+  wins Wins[] // история победителей
+
+  createdAt DateTime @default(now())
+}
+
+model Wins {
+  id     String   @id @default(uuid())
+  userId String
+  lotId  String
+  wonAt  DateTime @default(now())
+
+  user User @relation(fields: [userId], references: [id])
+  lot  Lot  @relation(fields: [lotId], references: [id])
+}
+
+// Отдельная сущность для ботов: только служебный id и публичное имя
+model Bot {
+  id   String @id @default(uuid())
+  name String
+}

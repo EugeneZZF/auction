@@ -1,0 +1,63 @@
+.card {
+  display: flex;
+  min-width: 0;
+  height: 100%;
+  flex-direction: column;
+  overflow: hidden;
+  border: 1px solid #e5eae7;
+  border-radius: 16px;
+  background: #fff;
+  box-shadow: 0 5px 18px rgba(20, 48, 32, .045);
+  transition: transform 180ms ease, box-shadow 180ms ease, border-color 180ms ease;
+}
+
+.card:hover {
+  transform: translateY(-4px);
+  border-color: #cfe7d9;
+  box-shadow: 0 14px 30px rgba(20, 48, 32, .12);
+}
+
+.cardLink { display: block; color: inherit; text-decoration: none; }
+.media { position: relative; display: flex; width: 100%; aspect-ratio: 1.42 / 1; overflow: hidden; background: #f3f6f4; }
+.image { width: 100%; height: 100%; object-fit: cover; transition: transform 350ms ease; }
+.card:hover .image { transform: scale(1.045); }
+.imagePlaceholder { display: grid; width: 100%; place-items: center; background: radial-gradient(circle at 50% 40%, #e8f6ee, #f4f7f5 70%); color: #00a15b; font-size: 22px; font-weight: 800; letter-spacing: -.04em; }
+.liveBadge, .timer { position: absolute; top: 12px; display: inline-flex; align-items: center; border-radius: 999px; padding: 8px 11px; background: rgba(255, 255, 255, .95); box-shadow: 0 2px 10px rgba(20, 40, 28, .12); backdrop-filter: blur(8px); }
+.liveBadge { left: 12px; gap: 7px; color: #236044; font-size: 11px; font-weight: 800; }
+.liveBadge i { width: 7px; height: 7px; border-radius: 50%; background: #00a15b; box-shadow: 0 0 0 3px rgba(0, 161, 91, .12); }
+.timer { right: 12px; gap: 6px; color: #17211c; font-family: var(--font-geist-mono), monospace; font-size: 13px; font-weight: 700; font-variant-numeric: tabular-nums; }
+.clockIcon { color: #00a15b; font-family: Arial, sans-serif; font-size: 17px; line-height: 1; }
+.content { padding: 17px 18px 6px; }
+.name { display: -webkit-box; min-height: 48px; margin: 0; overflow: hidden; color: #17211c; font-size: 17px; font-weight: 750; line-height: 1.4; -webkit-box-orient: vertical; -webkit-line-clamp: 2; }
+.description { display: -webkit-box; min-height: 38px; margin: 7px 0 12px; overflow: hidden; color: #737d76; font-size: 13px; line-height: 1.5; -webkit-box-orient: vertical; -webkit-line-clamp: 2; }
+.priceRow { display: flex; align-items: baseline; justify-content: space-between; gap: 8px; padding: 13px 0 8px; border-top: 1px solid #edf1ee; }
+.priceLabel { color: #7b857e; font-size: 12px; }
+.price { color: #17211c; font-size: 17px; font-weight: 800; white-space: nowrap; }
+.footer { display: flex; align-items: center; justify-content: space-between; gap: 8px; margin-top: auto; padding: 12px 18px 17px; }
+.footerHint { color: #748078; font-size: 11px; }
+.button { display: inline-flex; flex: 0 0 auto; align-items: center; justify-content: center; gap: 9px; min-height: 38px; padding: 0 14px; border-radius: 8px; background: #00a15b; color: #fff; font-size: 13px; font-weight: 750; text-decoration: none; transition: background 160ms ease; }
+.button:hover { background: #00864c; }
+.button span { font-size: 17px; line-height: 1; }
+
+@keyframes timerFlashAnim {
+  0% { background: #dbf6e7; color: #00864c; }
+  100% { background: rgba(255, 255, 255, .95); color: #17211c; }
+}
+.timerFlash { animation: timerFlashAnim .65s ease-in-out; }
+
+@media (max-width: 520px) {
+  .card { border-radius: 13px; }
+  .media { aspect-ratio: 1.45 / 1; }
+  .content { padding: 14px 14px 5px; }
+  .name { min-height: 42px; font-size: 15px; }
+  .description { font-size: 12px; }
+  .price { font-size: 15px; }
+  .footer { padding: 10px 14px 14px; }
+  .footerHint { max-width: 90px; line-height: 1.3; }
+  .button { min-height: 36px; padding: 0 11px; font-size: 12px; }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .card, .image { transition: none; }
+  .timerFlash { animation: none; }
+}

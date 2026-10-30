@@ -1,0 +1,26 @@
+.page { display: grid; grid-template-columns: minmax(250px, .75fr) minmax(0, 1.25fr); gap: clamp(28px, 6vw, 76px); width: min(100% - 40px, 1080px); margin: 0 auto; padding: 70px 0 88px; color: #17211c; align-items: start; }
+.intro { position: sticky; top: 32px; padding-top: 18px; }
+.kicker { color: #009755; font-size: 13px; font-weight: 800; letter-spacing: .08em; text-transform: uppercase; }
+.intro h1 { margin: 14px 0; font-size: clamp(36px, 5vw, 54px); line-height: 1.05; }
+.intro p { max-width: 390px; margin: 0 0 20px; color: #66736b; font-size: 17px; line-height: 1.65; }
+.intro a { color: #008b4e; font-weight: 700; text-decoration: underline; text-underline-offset: 3px; }
+.formCard { padding: clamp(22px, 4vw, 38px); border: 1px solid #e5ebe7; border-radius: 18px; background: #fff; box-shadow: 0 12px 36px rgba(20, 48, 32, .06); }
+.formCard h2 { margin: 0 0 8px; font-size: 24px; }
+.formHint { margin: 0 0 24px; color: #66736b; }
+.form { display: grid; gap: 18px; }
+.form label { display: grid; gap: 8px; color: #26332b; font-size: 14px; font-weight: 700; }
+.row { display: grid; grid-template-columns: 1fr 1fr; gap: 16px; }
+.form input, .form textarea { width: 100%; border: 1px solid #cbd5ce; border-radius: 8px; padding: 12px 14px; background: #fff; color: #111; font: inherit; font-size: 15px; font-weight: 400; outline: none; transition: border-color 150ms ease, box-shadow 150ms ease; }
+.form input { height: 48px; }
+.form textarea { min-height: 150px; resize: vertical; line-height: 1.5; }
+.form input:focus, .form textarea:focus { border-color: #00a15b; box-shadow: 0 0 0 3px rgba(0, 161, 91, .12); }
+.form input::placeholder, .form textarea::placeholder { color: #98a29b; }
+.form button { min-height: 48px; padding: 0 20px; border-radius: 8px; background: #00a15b; font: inherit; font-weight: 700; transition: background 150ms ease; }
+.form button:hover:not(:disabled) { background: #00864c; }
+.form button:disabled { background: #9bb8a7; }
+.form small { color: #77837b; font-size: 12px; line-height: 1.5; }
+.success, .error { margin: 0; padding: 12px 14px; border-radius: 8px; font-size: 14px; line-height: 1.5; }
+.success { background: #eaf8f0; color: #087343; }
+.error { background: #fff0f0; color: #a42828; }
+@media (max-width: 760px) { .page { grid-template-columns: 1fr; width: min(100% - 28px, 600px); gap: 24px; padding: 36px 0 60px; }.intro { position: static; padding-top: 0; }.intro p { max-width: 560px; } }
+@media (max-width: 520px) { .row { grid-template-columns: 1fr; }.formCard { border-radius: 14px; }.form { gap: 15px; } }

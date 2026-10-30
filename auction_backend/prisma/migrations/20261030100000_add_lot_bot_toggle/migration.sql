@@ -1,0 +1,2 @@
+ALTER TABLE "Lot"
+ADD COLUMN "botsEnabled" BOOLEAN NOT NULL DEFAULT true;

@@ -1,0 +1,90 @@
+.wrapper {
+  width: min(1120px, calc(100% - 40px));
+  min-height: 60vh;
+  margin: 32px auto 72px;
+  color: #17211c;
+}
+
+.heading {
+  display: flex;
+  justify-content: space-between;
+  align-items: flex-start;
+  gap: 24px;
+  padding: 12px 0 28px;
+}
+
+.heading h1 { margin: 4px 0 8px; font-size: clamp(28px, 4vw, 38px); line-height: 1.15; }
+.eyebrow { margin: 0 0 5px; color: #00a15b; font-size: 13px; font-weight: 700; letter-spacing: .04em; text-transform: uppercase; }
+.subtitle { margin: 0; color: #69736d; }
+.logout, .actionLink { border: 1px solid #d9e3dd; border-radius: 9px; padding: 10px 16px; background: #fff; color: #26332b; font: inherit; font-weight: 600; text-decoration: none; cursor: pointer; }
+.logout:hover, .actionLink:hover { border-color: #00a15b; color: #00884d; }
+
+.tabs { display: flex; gap: 8px; overflow-x: auto; border-bottom: 1px solid #e6ece8; margin-bottom: 24px; }
+.tab, .activeTab { flex: 0 0 auto; display: inline-flex; align-items: center; gap: 9px; padding: 13px 16px; border: 0; border-bottom: 2px solid transparent; background: transparent; color: #69736d; font: inherit; cursor: pointer; }
+.activeTab { border-bottom-color: #00a15b; color: #00884d; font-weight: 700; }
+.tab span, .activeTab span { border-radius: 999px; padding: 2px 7px; background: #f0f4f1; color: inherit; font-size: 12px; }
+
+.profileGrid { display: grid; grid-template-columns: minmax(0, 1fr) minmax(260px, .8fr); gap: 18px; }
+.profileCard, .statsCard, .accountCard, .listSection { border: 1px solid #e5ebe7; border-radius: 16px; background: #fff; box-shadow: 0 8px 28px rgba(20, 48, 32, .045); }
+.profileCard { display: flex; align-items: center; gap: 18px; min-height: 170px; padding: 28px; }
+.avatar { display: grid; flex: 0 0 72px; width: 72px; height: 72px; place-items: center; border-radius: 50%; background: #e5f6ed; color: #009755; font-size: 28px; font-weight: 700; }
+.profileCard h2 { margin: 0 0 6px; font-size: 24px; }
+.email { margin: 0; color: #69736d; overflow-wrap: anywhere; }
+.statsCard { display: grid; gap: 0; padding: 10px 22px; }
+.statsCard > div { display: flex; justify-content: space-between; align-items: center; gap: 18px; padding: 15px 0; border-bottom: 1px solid #edf1ee; }
+.statsCard > div:last-child { border: 0; }
+.statsCard span { color: #69736d; font-size: 14px; }
+.statsCard strong { text-align: right; font-size: 16px; }
+.statsCard > .balanceActions { display: flex; gap: 10px; padding: 0 0 15px; border-bottom: 1px solid #edf1ee; }
+.balanceActions button { flex: 1; min-height: 42px; border: 1px solid transparent; border-radius: 9px; font: inherit; font-weight: 700; cursor: pointer; }
+.depositButton { background: #00a15b; color: #fff; }
+.depositButton:hover { background: #00884d; }
+.withdrawButton { border-color: #d9e3dd !important; background: #fff; color: #26332b; }
+.withdrawButton:hover { border-color: #00a15b !important; color: #00884d; }
+.accountCard { grid-column: 1 / -1; padding: 24px 28px; }
+.accountCard h2, .sectionHeading h2 { margin: 0; font-size: 20px; }
+.accountCard dl { margin: 14px 0 0; }
+.accountCard dl > div { display: grid; grid-template-columns: minmax(130px, 220px) 1fr; gap: 16px; padding: 13px 0; border-bottom: 1px solid #edf1ee; }
+.accountCard dl > div:last-child { border: 0; }
+.accountCard dt { color: #69736d; }
+.accountCard dd { margin: 0; font-weight: 600; overflow-wrap: anywhere; }
+.userId { color: #69736d; font-size: 13px; font-weight: 400 !important; }
+
+.listSection { padding: 24px; }
+.sectionHeading { display: flex; justify-content: space-between; align-items: center; margin-bottom: 18px; }
+.sectionHeading p { margin: 6px 0 0; color: #69736d; font-size: 14px; }
+.historyList { display: grid; }
+.historyItem { display: flex; align-items: center; gap: 16px; padding: 14px 0; border-top: 1px solid #edf1ee; color: inherit; text-decoration: none; }
+.historyItem:hover .lotInfo strong { color: #00884d; }
+.lotThumb { position: relative; display: grid; flex: 0 0 64px; width: 64px; height: 64px; place-items: center; overflow: hidden; border-radius: 10px; background: #f0f4f1; color: #89958d; font-size: 12px; }
+.lotThumb img { object-fit: cover; }
+.lotInfo { display: grid; flex: 1; gap: 6px; min-width: 0; }
+.lotInfo strong { overflow: hidden; text-overflow: ellipsis; white-space: nowrap; }
+.lotInfo span { color: #69736d; font-size: 13px; }
+.bidCount { flex: 0 0 auto; color: #00884d; font-weight: 700; text-align: right; }
+.empty, .message { padding: 36px 20px; text-align: center; color: #69736d; }
+.message p { margin: 0 0 16px; }
+
+@media (max-width: 700px) {
+  .wrapper { width: min(100% - 28px, 560px); margin-top: 18px; }
+  .heading { padding-top: 4px; }
+  .heading h1 { font-size: 29px; }
+  .profileGrid { grid-template-columns: 1fr; }
+  .accountCard { grid-column: auto; }
+  .profileCard { min-height: auto; padding: 22px; }
+  .statsCard { padding-inline: 18px; }
+  .accountCard, .listSection { padding: 20px; }
+}
+
+@media (max-width: 440px) {
+  .wrapper { width: calc(100% - 24px); }
+  .heading { gap: 12px; }
+  .logout { padding: 9px 12px; }
+  .subtitle { font-size: 14px; }
+  .tabs { gap: 0; }
+  .tab, .activeTab { padding-inline: 11px; font-size: 14px; }
+  .accountCard dl > div { grid-template-columns: 1fr; gap: 5px; }
+  .historyItem { gap: 10px; }
+  .lotThumb { flex-basis: 52px; width: 52px; height: 52px; }
+  .bidCount { font-size: 13px; }
+}

@@ -1,0 +1,87 @@
+.form {
+  width: min(100% - 32px, 420px);
+  margin: 48px auto;
+  display: flex;
+  flex-direction: column;
+  gap: 12px;
+  padding: 32px;
+  border: 1px solid #e1e1e1;
+  border-radius: 10px;
+  background: #fff;
+  box-shadow: 0 8px 28px rgb(0 0 0 / 6%);
+}
+
+.form h1 {
+  font-size: 26px;
+}
+
+.description {
+  margin-bottom: 8px;
+  color: #555;
+  font-size: 14px;
+  line-height: 1.55;
+  overflow-wrap: anywhere;
+}
+
+.form label {
+  font-size: 14px;
+  font-weight: 600;
+}
+
+.form input {
+  height: 46px;
+  padding: 0 14px;
+  border: 1px solid #aaa;
+  border-radius: 5px;
+  background: #fff;
+  color: #111;
+  font: inherit;
+  font-size: 18px;
+  letter-spacing: 0.2em;
+}
+
+.form button {
+  min-height: 44px;
+  border: 0;
+  border-radius: 5px;
+  background: #00a55e;
+  color: #fff;
+  font: inherit;
+  font-weight: 600;
+  cursor: pointer;
+}
+
+.form button:disabled {
+  cursor: not-allowed;
+  opacity: 0.65;
+}
+
+.form .back {
+  background: transparent;
+  color: #008a50;
+}
+
+.error {
+  color: #b42318;
+  font-size: 13px;
+}
+
+.notice {
+  color: #008a50;
+  font-size: 13px;
+}
+
+.form .resend {
+  min-height: 36px;
+  padding: 4px 8px;
+  background: transparent;
+  color: #008a50;
+  font-size: 13px;
+}
+
+@media (max-width: 520px) {
+  .form {
+    margin: 28px auto;
+    padding: 24px 20px;
+  }
+}

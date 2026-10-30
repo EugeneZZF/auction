@@ -1,0 +1,200 @@
+.container {
+  background-color: #f8f9fa;
+  border-radius: 12px;
+  padding: 20px;
+  margin-top: 20px;
+  
+}
+
+.title {
+  font-size: 18px;
+  font-weight: 600;
+  color: #333;
+  margin: 0 0 15px 0;
+  text-align: center;
+}
+
+.userStats {
+  display: flex;
+  justify-content: space-around;
+  background-color: white;
+  padding: 15px;
+  border-radius: 8px;
+  margin-bottom: 15px;
+  box-shadow: 0 1px 3px rgba(0, 0, 0, 0.1);
+}
+
+.stat {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 5px;
+}
+
+.label {
+  font-size: 12px;
+  color: #666;
+  font-weight: 500;
+}
+
+.value {
+  font-size: 16px;
+  font-weight: 700;
+  color: #333;
+}
+
+.error {
+  background-color: #f8d7da;
+  color: #721c24;
+  padding: 12px;
+  border-radius: 6px;
+  margin-bottom: 15px;
+  font-size: 14px;
+  border: 1px solid #f5c6cb;
+}
+
+.success {
+  background-color: #d4edda;
+  color: #155724;
+  padding: 12px;
+  border-radius: 6px;
+  margin-bottom: 15px;
+  font-size: 14px;
+  border: 1px solid #c3e6cb;
+  text-align: center;
+  font-weight: 600;
+}
+
+.bidButton {
+  width: 100%;
+  background-color: #28a745;
+  color: white;
+  border: none;
+  padding: 15px;
+  border-radius: 8px;
+  font-size: 16px;
+  font-weight: 600;
+  cursor: pointer;
+  transition: background-color 0.2s ease;
+  margin-bottom: 15px;
+}
+
+.bidButton:hover:not(:disabled) {
+  background-color: #218838;
+}
+
+.bidButton:disabled {
+  background-color: #6c757d;
+  cursor: not-allowed;
+}
+
+.noBids {
+  text-align: center;
+  padding: 15px;
+  background-color: #fff3cd;
+  border: 1px solid #ffeaa7;
+  border-radius: 6px;
+}
+
+.noBids p {
+  margin: 5px 0;
+  color: #856404;
+}
+
+.buyBidsHint {
+  font-size: 12px;
+  color: #666;
+  font-style: italic;
+}
+
+.bidInfo {
+  text-align: center;
+  padding: 15px;
+  background-color: #e3f2fd;
+  border: 1px solid #bbdefb;
+  border-radius: 6px;
+}
+
+.bidInfo p {
+  margin: 5px 0;
+  color: #1976d2;
+}
+
+.bidCost {
+  font-weight: 600;
+  font-size: 14px;
+}
+
+.authMessage {
+  text-align: center;
+  color: #856404;
+  font-size: 14px;
+  padding: 15px;
+  background-color: #fff3cd;
+  border: 1px solid #ffeaa7;
+  border-radius: 6px;
+}
+
+.connectionWarning {
+  text-align: center;
+  padding: 10px;
+  background-color: #fff3cd;
+  border: 1px solid #ffeaa7;
+  border-radius: 6px;
+  margin-top: 10px;
+}
+
+.connectionWarning p {
+  margin: 0;
+  color: #856404;
+  font-size: 12px;
+  font-style: italic;
+}
+
+.connectionSuccess {
+  text-align: center;
+  padding: 10px;
+  background-color: #d4edda;
+  border: 1px solid #c3e6cb;
+  border-radius: 6px;
+  margin-top: 10px;
+}
+
+.connectionSuccess p {
+  margin: 0;
+  color: #155724;
+  font-size: 12px;
+  font-weight: 600;
+}
+
+.debugInfo {
+  margin-top: 15px;
+  padding: 10px;
+  background-color: #f8f9fa;
+  border: 1px solid #dee2e6;
+  border-radius: 6px;
+  font-size: 11px;
+  color: #666;
+}
+
+.debugInfo p {
+  margin: 2px 0;
+  font-family: monospace;
+}
+
+/* Адаптивность */
+@media (max-width: 768px) {
+  .container {
+    padding: 15px;
+  }
+  
+  .userStats {
+    flex-direction: column;
+    gap: 10px;
+  }
+  
+  .bidButton {
+    padding: 12px;
+    font-size: 14px;
+  }
+} 

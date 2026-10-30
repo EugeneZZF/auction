@@ -1,0 +1,257 @@
+.header {
+  width: 100%;
+  flex: 0 0 auto;
+  border-top: 3px solid #222;
+}
+
+.pageBar {
+  height: 42px;
+  display: flex;
+  align-items: center;
+  padding: 0 4px;
+  color: #aaa;
+  background: #222;
+  font-size: 14px;
+}
+
+.top {
+  min-height: 36px;
+  background: #fff;
+}
+
+.topInner,
+.bottomInner {
+  width: min(100% - 64px, 1200px);
+  min-height: inherit;
+  margin: 0 auto;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 24px;
+}
+
+.spc,
+.authLinks {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  color: #222;
+  font-size: 12px;
+  white-space: nowrap;
+}
+
+.authLinks {
+  gap: 6px;
+}
+
+.spc a,
+.authLinks a {
+  transition: color 160ms ease;
+}
+
+.spc a:hover,
+.authLinks a:hover {
+  color: #00a55e;
+}
+
+.userLink {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+}
+
+.userInfo {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+}
+
+.divider {
+  color: #aaa;
+}
+
+.centerise {
+  display: flex;
+  align-items: center;
+  gap: 4px;
+}
+
+.bottom {
+  height: 82px;
+  background: #efefef;
+}
+
+.bottomInner {
+  height: 100%;
+  justify-content: flex-start;
+}
+
+.brand {
+  display: flex;
+  flex: 0 0 auto;
+  align-items: center;
+}
+
+.brand h1 {
+  font-size: 38px;
+}
+
+.search {
+  min-width: 0;
+  flex: 1;
+  display: flex;
+  gap: 16px;
+}
+
+.search input {
+  min-width: 0;
+  flex: 1;
+  height: 38px;
+  padding: 0 18px;
+  border: 1px solid #aaa;
+  border-radius: 5px;
+  outline-color: #00a55e;
+  background: #fff;
+  color: #111;
+  font: inherit;
+  font-size: 15px;
+}
+
+.search input::placeholder {
+  color: #999;
+}
+
+.search button {
+  width: 140px;
+  height: 38px;
+  border: 0;
+  border-radius: 5px;
+  color: #fff;
+  background: #00a55e;
+  font: inherit;
+  font-size: 15px;
+  cursor: pointer;
+  transition: background 160ms ease;
+}
+
+.search button:hover {
+  background: #008b4e;
+}
+
+@media (max-width: 900px) {
+  .topInner,
+  .bottomInner {
+    width: min(100% - 40px, 760px);
+  }
+
+  .bottom {
+    height: 68px;
+  }
+
+  .brand h1 {
+    font-size: 30px;
+  }
+
+  .search input,
+  .search button {
+    height: 34px;
+    font-size: 13px;
+  }
+
+  .search button {
+    width: 110px;
+  }
+}
+
+@media (max-width: 640px) {
+  .pageBar {
+    height: 32px;
+    font-size: 12px;
+  }
+
+  .top {
+    padding: 7px 0;
+  }
+
+  .topInner,
+  .bottomInner {
+    width: calc(100% - 32px);
+  }
+
+  .topInner {
+    flex-wrap: wrap;
+    justify-content: flex-start;
+    gap: 8px 18px;
+  }
+
+  .spc,
+  .authLinks {
+    gap: 10px;
+    font-size: 11px;
+  }
+
+  .userLink,
+  .userInfo {
+    gap: 8px;
+  }
+
+  .bottom {
+    height: 64px;
+  }
+
+  .bottomInner {
+    gap: 12px;
+  }
+
+  .brand h1 {
+    font-size: 23px;
+  }
+
+  .search {
+    gap: 8px;
+  }
+
+  .search input,
+  .search button {
+    height: 38px;
+  }
+
+  .search input {
+    padding: 0 10px;
+    font-size: 14px;
+  }
+
+  .search button {
+    width: 68px;
+    font-size: 13px;
+  }
+}
+
+@media (max-width: 380px) {
+  .topInner,
+  .bottomInner {
+    width: calc(100% - 24px);
+  }
+
+  .spc,
+  .authLinks {
+    gap: 7px;
+    font-size: 10px;
+  }
+
+  .bottomInner {
+    gap: 8px;
+  }
+
+  .brand h1 {
+    font-size: 20px;
+  }
+
+  .search {
+    gap: 6px;
+  }
+
+  .search button {
+    width: 54px;
+  }
+}

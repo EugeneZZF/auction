@@ -1,0 +1,13 @@
+.sec{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: 100%;
+    height: 19.583vw;
+}
+
+.img{
+    width: 65.781vw;
+    height: 16.875vw;
+    flex-shrink: 0;
+}
